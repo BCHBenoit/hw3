@@ -1,5 +1,18 @@
 <h1><%=@place_name%></h1>
 
+<%entry_row = 0%>
+
+<%for entry_row in @entries_row%>
+  <p><h3> <%= entry_row["title"]%></h3></p>
+  <p><h5> <%= entry_row["posted_on"]%></h5></p>
+  <p><h4> <%= entry_row["description"]%></h4></p>
+  
+<%end%>
+
 <p>
-  <a href="/entries/new?place_id=<%=@place_id%>">New Post</a>
+  <a href="/entries/new?place_id=<%=@place_id%>">New Entry</a>
+</p>
+
+<p>
+  <a href="/places">Back to Places</a>
 </p>

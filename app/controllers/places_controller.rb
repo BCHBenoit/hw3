@@ -8,6 +8,9 @@ class PlacesController < ApplicationController
     @places_table = Place.all
     @places_table_row = @places_table.find_by({"id" => @place_id})
     @place_name = @places_table_row["name"]
+
+    @entries_table = Entry.all
+    @entries_row = @entries_table.where({"place_id" => @place_id})
   end
 
   def new
