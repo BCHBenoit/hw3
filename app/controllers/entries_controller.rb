@@ -14,6 +14,14 @@ class EntriesController < ApplicationController
   end
 
   def create
+    @new_row_entries = Entry.new
+    @new_row_entries["title"] = params["title"]
+    @new_row_entries["description"] = params["description"]
+    @new_row_entries["posted_on"] = params["posted_on"]
+    @new_row_entries["place_id"] = params["place_id"]
+    @new_row_entries.save
+
+    redirect_to "/places"
   end
 end
 
