@@ -1,0 +1,11 @@
+
+<h1>Places I've been</h1>
+
+<ul>
+  <%places_row = 0%>
+
+  <%for places_row in @places_table%>
+    <li><%=places_row["name"]%></li>
+  <%end%>
+
+</ul>
