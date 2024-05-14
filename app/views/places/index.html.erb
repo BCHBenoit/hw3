@@ -2,10 +2,17 @@
 <h1>Places I've been</h1>
 
 <ul>
-  <%places_row = 0%>
+  <%places_row = 0
+  places_row_id = 0%>
 
   <%for places_row in @places_table%>
-    <li><%=places_row["name"]%></li>
+    <%places_row_id = places_row["id"]%>
+    <li><a href="/places/<%=places_row_id%>"><%=places_row["name"]%></a></li>
   <%end%>
+
+<p>
+  <a href="/places/new">New Place</a>
+</p>
+
 
 </ul>
