@@ -4,6 +4,10 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @place_id = params["id"]
+    @places_table = Place.all
+    @places_table_row = @places_table.find_by({"id" => @place_id})
+    @place_name = @places_table_row["name"]
   end
 
   def new
